@@ -1,12 +1,60 @@
 .keyboard-row{
-    width: 100%;
+    width: 400px;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto 3px auto;
+    gap: 3px;
 }
 
 .letter-button{
+    color: var(--keyboard-text-color);
+    min-width: 44px;
+    height: 62px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.letter-button:hover{
+    background-color: var(--keyboard-button-color-hovered);
+}
+
+.letter-button-not-clicked{
+    background-color: var(--keyboard-button-color);
+}
+
+.letter-button-not-have{
+    background-color: var(--keyboard-button-color-gray);
+}
+
+.letter-button-green{
+    background-color: var(--keyboard-button-color-green);
+}
+
+.letter-button-yellow{
+    background-color: var(--keyboard-button-color-yellow);
+}
+
+.letter-button-big{
     background-color: var(--keyboard-button-color);
     color: var(--keyboard-text-color);
-    width: 32px;
-    height: 48px;
+    min-width: 72px;
+    height: 62px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.letter-button-big:hover{
+    background-color: var(--keyboard-button-color-hovered);
 }

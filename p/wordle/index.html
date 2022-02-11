@@ -7,19 +7,49 @@
     <title>Wordle Versus</title>
     <link rel="stylesheet" href="root.css">
     <link rel="stylesheet" href="keyboard.css">
+    <link rel="stylesheet" href="structure.css">
+
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="keyboard-row">
-        <div class="letter-button">a</div>
-        <div class="letter-button">b</div>
-        <div class="letter-button">c</div>
-        <div class="letter-button">d</div>
+    <div class="letter-container">
+
     </div>
-    <div class="keyboard-row">
-        <div class="letter-button">e</div>
-        <div class="letter-button">f</div>
-        <div class="letter-button">g</div>
+    <div class="keyboard-container">  
+        <div class="keyboard-row">
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('q')" id="q-letter">Q</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('w')" id="w-letter">W</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('e')" id="e-letter">E</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('r')" id="r-letter">R</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('t')" id="t-letter">T</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('y')" id="y-letter">Y</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('u')" id="u-letter">U</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('i')" id="i-letter">I</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('o')" id="o-letter">O</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('p')" id="p-letter">P</div>
+        </div>
+        <div class="keyboard-row">
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('a')" id="a-letter">A</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('s')" id="s-letter">S</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('d')" id="d-letter">D</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('f')" id="f-letter">F</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('g')" id="g-letter">G</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('h')" id="h-letter">H</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('j')" id="j-letter">J</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('k')" id="k-letter">K</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('l')" id="l-letter">L</div>
+        </div>
+        <div class="keyboard-row">
+            <div class="letter-button-big" onclick="EnterWord()">ENTER</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('z')" id="z-letter">Z</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('x')" id="x-letter">X</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('c')" id="c-letter">C</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('v')" id="v-letter">V</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('b')" id="b-letter">B</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('n')" id="n-letter">N</div>
+            <div class="letter-button letter-button-not-clicked" onclick="ClickedLetter('m')" id="m-letter">M</div>
+            <div class="letter-button-big" onclick="RemoveLetter()">←</div>
+        </div>
     </div>
-    
 </body>
 </html>

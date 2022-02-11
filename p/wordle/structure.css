@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.keyboard-container{
+    flex-shrink: 0;
+    margin-bottom: 10px;
+}
+
+.letter-container{
+    flex: 1 0 auto;
+}
