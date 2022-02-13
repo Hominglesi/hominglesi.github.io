@@ -7,4 +7,7 @@
     --keyboard-button-color-yellow: rgb(232, 252, 58);
     --keyboard-button-color-gray: rgb(128, 128, 128);
     --keyboard-text-color: rgb(24,24,24);
+
+    --letterbox-border-color: rgb(180,180,180);
+    --letterbox-letter-color: rgb(255,255,255);
 }
