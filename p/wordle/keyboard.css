@@ -18,6 +18,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     cursor: pointer;
+    user-select: none;
 }
 
 .letter-button:hover{
@@ -53,6 +54,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     cursor: pointer;
+    user-select: none;
 }
 
 .letter-button-big:hover{
