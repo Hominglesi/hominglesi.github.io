@@ -13,4 +13,14 @@
     --letterbox-color-green: rgb(20,170,20);
     --letterbox-color-yellow: rgb(232, 252, 58);
     --letterbox-color-gray: rgb(128, 128, 128);
+
+    --playerbar-selected-color: rgb(20,170,20);
+    --playerbar-selected-color-extra: rgb(30,200,30);
+    --playerbar-selected-color-background: rgb(15,145,15);
+    --playerbar-other-color: rgb(232, 252, 58);
+    --playerbar-other-color-extra: rgb(255, 255, 72);
+    --playerbar-other-color-background: rgb(200, 200, 40);
+
+    --scrollbar-color: rgb(220,220,220);
+    --scrollbar-color-hovered: rgb(210,210,210);
 }

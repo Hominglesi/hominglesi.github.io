@@ -1,0 +1,28 @@
+.outer-bar{
+    width: 360px;
+    height: 12px;
+    background-color: var(--playerbar-selected-color-background);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-bar{
+    width: 0%;
+    height: 12px;
+    background-color: var(--playerbar-selected-color);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.extra-bar{
+    width: 0%;
+    height: 12px;
+    background-color: var(--playerbar-selected-color-extra);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

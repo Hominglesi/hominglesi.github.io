@@ -52,3 +52,16 @@
 .apply-shake{
     animation: shake 0.7s linear;
 }
+
+.letterbox-container-scrollable::-webkit-scrollbar {
+  width: 10px;
+}
+
+.letterbox-container-scrollable::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 5px;
+}
+
+.letterbox-container-scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-color-hovered);
+}

@@ -1,7 +1,13 @@
 var currentWord = [];
 var currentRow = -1;
+var maxPoints = 25;
+var players = [];
+var currentPlayer = 0;
 
-var targetWord = goodWords[Math.floor(Math.random()*goodWords.length)].toUpperCase();
+var targetWord = GetRandomWord();
+
+//new Player();
+//new Player();
 
 CreateNextRow();
 //SetButtonStatus(document.getElementById(letter + "-letter"), "green");
@@ -25,6 +31,7 @@ function EnterWord(){
     if(currentWord.length!=5) return;
     if(CheckWord(currentWord) == true){
         ValidateRow();
+        ProccesWord();
         CreateNextRow();
         currentWord = [];
     }else{
@@ -95,9 +102,28 @@ function ValidateRow(){
     }
 }
 
+function ProccesWord(){
+    var word = currentWord.join("");
+
+    if(word == targetWord){
+        targetWord = GetRandomWord();
+        ResetKeyboard();
+    }
+}
+
+function ResetKeyboard(){
+    var letters = document.getElementsByClassName("letter-button");
+    for (let i = 0; i < letters.length; i++) {
+        var letter = letters[i];
+        var letterChar = letter.id.charAt(0);
+        SetButtonStatus(letterChar, "not-clicked");
+        
+    }
+}
+
 function CreateNextRow(){
     currentRow++;
-    var letterboxContainer = document.getElementsByClassName("letterbox-container")[0];
+    var letterboxContainer = document.getElementsByClassName("letterbox-container-scrollable")[0];
     var letterboxRow = CreateElement("div","letterbox-row","letterbox-row-" + currentRow, letterboxContainer);
     for (let i = 0; i < 5; i++) {
         CreateElement("h1","letterbox", "letterbox-" + currentRow + "-" + i, letterboxRow);
@@ -106,6 +132,8 @@ function CreateNextRow(){
     letterboxRow.addEventListener("animationend", (e) => {
         letterboxRow.classList.remove("apply-shake");
     });
+
+    letterboxContainer.scrollTop = letterboxContainer.scrollHeight;
 }
 
 function CreateElement(divType, divClass, divId, parent){
@@ -120,6 +148,10 @@ function CreateElement(divType, divClass, divId, parent){
 function CheckWord(word){
     var stringWord = word.join("");
     return acceptedWords.includes(stringWord.toLowerCase());
+}
+
+function GetRandomWord(){
+    return goodWords[Math.floor(Math.random()*goodWords.length)].toUpperCase();
 }
 
 document.addEventListener("keydown", e => {
