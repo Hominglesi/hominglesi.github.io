@@ -3,16 +3,18 @@
 
     --keyboard-button-color: rgb(220,220,220);
     --keyboard-button-color-hovered: rgb(210,210,210);
-    --keyboard-button-color-green: rgb(20,170,20);
-    --keyboard-button-color-yellow: rgb(232, 252, 58);
-    --keyboard-button-color-gray: rgb(128, 128, 128);
+    --keyboard-button-color-green: #5AEB32;
+    --keyboard-button-color-yellow: #E6D14B;
+    --keyboard-button-color-gray: #A3A3A3;
     --keyboard-text-color: rgb(24,24,24);
 
     --letterbox-border-color: rgb(180,180,180);
+    --letterbox-border-color1: #A5EFF3;
+    --letterbox-border-color2: #BBADFF;
     --letterbox-letter-color: rgb(255,255,255);
-    --letterbox-color-green: rgb(20,170,20);
-    --letterbox-color-yellow: rgb(232, 252, 58);
-    --letterbox-color-gray: rgb(128, 128, 128);
+    --letterbox-color-green: #5AEB32;
+    --letterbox-color-yellow: #E6D14B;
+    --letterbox-color-gray: #A3A3A3;
 
     --playerbar-selected-color: rgb(20,170,20);
     --playerbar-selected-color-extra: rgb(30,200,30);
@@ -20,6 +22,19 @@
     --playerbar-other-color: rgb(232, 252, 58);
     --playerbar-other-color-extra: rgb(255, 255, 72);
     --playerbar-other-color-background: rgb(200, 200, 40);
+
+    --playerbar-player1-background-color: #B7F2F5;
+    --playerbar-player1-color: #4BDFE7;
+    --playerbar-player1-extra-color: #1BBDC5;
+    --playerbar-player2-background-color: #DCD6FF;
+    --playerbar-player2-color: #9985FF;
+    --playerbar-player2-extra-color: #6647FF;
+
+    --playerbar-name-selected-color: rgb(20,170,20);
+    --playerbar-name-other-color: rgb(255, 255, 72);
+
+    --playerbar-name1-color: #A5EFF3;
+    --playerbar-name2-color: #BBADFF;
 
     --scrollbar-color: rgb(220,220,220);
     --scrollbar-color-hovered: rgb(210,210,210);

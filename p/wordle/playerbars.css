@@ -1,7 +1,6 @@
 .outer-bar{
     width: 360px;
     height: 12px;
-    background-color: var(--playerbar-selected-color-background);
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -10,7 +9,6 @@
 .inner-bar{
     width: 0%;
     height: 12px;
-    background-color: var(--playerbar-selected-color);
     border-radius: 10px;
     position: absolute;
     top: 0;
@@ -20,9 +18,75 @@
 .extra-bar{
     width: 0%;
     height: 12px;
-    background-color: var(--playerbar-selected-color-extra);
     border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.playerbar1{
+    background-color: var(--playerbar-player1-background-color);
+}
+.playerbar1 .inner-bar{
+    background-color: var(--playerbar-player1-color);
+}
+.playerbar1 .extra-bar{
+    background-color: var(--playerbar-player1-extra-color);
+}
+
+.playerbar2{
+    background-color: var(--playerbar-player2-background-color);
+}
+.playerbar2 .inner-bar{
+    background-color: var(--playerbar-player2-color);
+}
+.playerbar2 .extra-bar{
+    background-color: var(--playerbar-player2-extra-color);
+}
+
+.player-bar-active{
+    background-color: var(--playerbar-selected-color-background);
+}
+
+.player-bar-active .inner-bar{
+    background-color: var(--playerbar-selected-color);
+}
+
+.player-bar-active .extra-bar{
+    background-color: var(--playerbar-selected-color-extra);
+}
+
+.player-bar-idle{
+    background-color: var(--playerbar-other-color-background);
+}
+
+.player-bar-idle .inner-bar{
+    background-color: var(--playerbar-other-color);
+}
+
+.player-bar-idle .extra-bar{
+    background-color: var(--playerbar-other-color-extra);
+}
+
+.player-name{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: 16px;
+    margin-bottom:6px;  
+}
+
+.player-name-active{
+    color: var(--playerbar-name-selected-color);
+}
+
+.player-name-idle{
+    color: var(--playerbar-name-other-color);
+}
+
+.playername1{
+    color: var(--playerbar-name1-color);
+}
+
+.playername2{
+    color: var(--playerbar-name2-color);
 }

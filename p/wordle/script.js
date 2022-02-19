@@ -3,11 +3,14 @@ var currentRow = -1;
 var maxPoints = 25;
 var players = [];
 var currentPlayer = 0;
+var pointsPerLetter = 2;
+var pointsPerWord = 3;
 
 var targetWord = GetRandomWord();
+var guessedLetters = ["x","x","x","x","x"];
 
-//new Player();
-//new Player();
+new Player("Player 1");
+new Player("Player 2");
 
 CreateNextRow();
 //SetButtonStatus(document.getElementById(letter + "-letter"), "green");
@@ -86,7 +89,7 @@ function ValidateRow(){
             document.getElementById("letterbox-" + currentRow + "-" + i).classList.add("letterbox-yellow");
             var index = remainingWord.indexOf(currentWord[i]);
             remainingWord = remainingWord.replaceAt(index, '.');
-            if(GetButtonStatus(currentWord[i]) != "green");
+            if(GetButtonStatus(currentWord[i]) != "green")
                 SetButtonStatus(currentWord[i], "yellow")
         }
     }
@@ -97,7 +100,7 @@ function ValidateRow(){
         if(document.getElementById("letterbox-" + currentRow + "-" + i).classList.contains("letterbox-yellow")) continue;
         if(currentWord[i] == '.') continue;
         document.getElementById("letterbox-" + currentRow + "-" + i).classList.add("letterbox-gray");
-        if(GetButtonStatus(currentWord[i]) == "not-clicked");
+        if(GetButtonStatus(currentWord[i]) == "not-clicked")
             SetButtonStatus(currentWord[i], "not-have")
     }
 }
@@ -105,9 +108,33 @@ function ValidateRow(){
 function ProccesWord(){
     var word = currentWord.join("");
 
+    ProcessPlay(word == targetWord);
+
     if(word == targetWord){
         targetWord = GetRandomWord();
         ResetKeyboard();
+    }
+}
+
+function ProcessPlay(isGuessed){
+    for (let i = 0; i < 5; i++) {
+        if(guessedLetters[i]=="o") continue;
+        if(currentWord[i] == targetWord[i]){
+            players[currentPlayer].addPoints(pointsPerLetter);
+            guessedLetters[i]="o";
+        }
+    }
+
+    if(isGuessed){
+        players[currentPlayer].addPoints(pointsPerWord);
+        guessedLetters = ["x","x","x","x","x"];
+    }
+
+    currentPlayer++;
+    if(currentPlayer>=players.length) currentPlayer=0;
+    for (let i = 0; i < players.length; i++) {
+        players[i].setTurn();
+        
     }
 }
 
@@ -126,7 +153,9 @@ function CreateNextRow(){
     var letterboxContainer = document.getElementsByClassName("letterbox-container-scrollable")[0];
     var letterboxRow = CreateElement("div","letterbox-row","letterbox-row-" + currentRow, letterboxContainer);
     for (let i = 0; i < 5; i++) {
-        CreateElement("h1","letterbox", "letterbox-" + currentRow + "-" + i, letterboxRow);
+        var el = CreateElement("h1","letterbox", "letterbox-" + currentRow + "-" + i, letterboxRow);
+        el.classList.toggle("letterbox-player1",currentPlayer==0);
+        el.classList.toggle("letterbox-player2",currentPlayer==1);
     }
 
     letterboxRow.addEventListener("animationend", (e) => {
