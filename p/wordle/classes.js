@@ -46,3 +46,11 @@ class Player{
         this.nameDiv.classList.toggle("player-name-idle", currentPlayer != this.playerNumber);*/
     }
 }
+
+class MatchUp{
+    constructor(first,second,tier){
+        this.first = first;
+        this.second = second;
+        this.tier = tier;
+    }
+}

@@ -9,11 +9,52 @@ var pointsPerWord = 3;
 var targetWord = GetRandomWord();
 var guessedLetters = ["x","x","x","x","x"];
 
-new Player("Player 1");
-new Player("Player 2");
+var prob1 = 5;
+var prob2 = 2;
+var prob3 = 1;
+
+function CreatePlayers(){
+    var totalChance = 0;
+    for (let i = 0; i < matchups.length; i++) {
+        totalChance += GetProbability(matchups[i].tier)
+    }
+    var randomNum = Math.floor(Math.random()*totalChance);
+    totalChance = 0;
+    var name1;
+    var name2;
+    for (let i = 0; i < matchups.length; i++) {
+        if(totalChance < randomNum){
+            totalChance += GetProbability(matchups[i].tier);
+        }else{
+            name1 = matchups[i].name1;
+            name2 = matchups[i].name2;
+            i = matchups.length;
+        }
+    }
+    if(name1 == undefined || name2 == undefined){
+        console.log("Error moment");
+        name1 = "Player1";
+        name2 = "Player2";
+    }
+
+    new Player(name1);
+    new Player(name2);
+}
+
+function GetProbability(tier){
+    switch (tier) {
+        case "common": return prob1;
+        case "uncommon": return prob2;
+        case "rare": return prob3;
+    }
+}
+
+CreatePlayers();
 
 CreateNextRow();
 //SetButtonStatus(document.getElementById(letter + "-letter"), "green");
+
+
 
 function ClickedLetter(letter){
     if(currentWord.length<5){
