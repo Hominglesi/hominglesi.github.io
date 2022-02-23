@@ -20,5 +20,5 @@ new MatchUp("Odin","Operator","tier"),
 new MatchUp("Reina","Jett","tier"),
 new MatchUp("Yone","Yasuo","tier"),
 new MatchUp("TFT","ARAM","tier"),
-]
+] 
 
