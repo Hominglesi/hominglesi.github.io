@@ -26,11 +26,12 @@ function CreatePlayers(){
         if(totalChance < randomNum){
             totalChance += GetProbability(matchups[i].tier);
         }else{
-            name1 = matchups[i].name1;
-            name2 = matchups[i].name2;
+            name1 = matchups[i].first;
+            name2 = matchups[i].second;
             i = matchups.length;
         }
     }
+    console.log(totalChance, randomNum);
     if(name1 == undefined || name2 == undefined){
         console.log("Error moment");
         name1 = "Player1";
@@ -42,6 +43,7 @@ function CreatePlayers(){
 }
 
 function GetProbability(tier){
+    return 1;
     switch (tier) {
         case "common": return prob1;
         case "uncommon": return prob2;
