@@ -10,7 +10,7 @@
 
 <style>
     div{
-        border: 2px solid black;
+        border: 3px solid black;
         width: 350px;
         padding-top: 8px;
         padding-bottom: 8px;
@@ -18,6 +18,7 @@
         color: black;
         text-align: center;
         cursor:pointer;
+        font-family: "Times New Roman", sans-serif;
     }
     div:hover{
         background-color: black;
