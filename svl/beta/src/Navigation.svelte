@@ -3,40 +3,45 @@
     export let name;
     export let isDropDownList=false;
 
+    function Redirect(){
+        if(isDropDownList == true){
+            window.location.href = link
+        }
+    }
 </script>
 
-{#if isDropDownList}
-    <div class="ddl">
-        <slot></slot>
-    </div>
-{/if}
-<div class="nddl" on:click = {window.location.href = link}>
+
+<div on:click = {Redirect}>
     {name}
+    {#if isDropDownList}
+        <nav>
+            <slot></slot>
+        </nav>
+    {/if}
 </div>
 
 <style>
-    .ddl{
-        position:absolute;
-        top: 20px;
+    nav{
+        position:relative;
         display: none;
         height: 40px;
         width: 150px;
         text-align: center;
-        color: white;
+        color: black;
     }
-    .ddl:hover{
+    nav:hover{
         display: block;
     }
-    .nddl{
+    div{
         height: 40px;
         width: 150px;
         text-align: center;
     }
-    .nddl:hover{
+    div:hover{
         background-color: white;
         color: black;
     }
-    .nddl:hover .ddl{
+    div:hover > nav{
         display: block;
     }
 </style>

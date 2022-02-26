@@ -8,10 +8,11 @@ import Navigation from "./Navigation.svelte";
 <main>
 	<Title text="Fast Mans" />
 	<Container width="1200px" height="40px" margin="0 auto"> 
-		<Navigation name="Blog" link="#" isDropDownList=false/>
+		<Navigation name="Blog" link="#"/>
 		<Navigation name="Arhivirano" isDropDownList=true>
-			<Container>
-				<Navigation name="gas" link="#" isDropDownList=false/>
+			<Container flexDirection="column">
+				<Navigation name="gas" link="#"/>
+				<Navigation name="gas2" link="#"/>
 			</Container>
 		</Navigation>
 		
