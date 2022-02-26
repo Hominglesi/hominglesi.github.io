@@ -16,6 +16,8 @@
 
 <style>
     .ddl{
+        position:absolute;
+        top: 20px;
         display: none;
         height: 40px;
         width: 150px;
@@ -26,7 +28,6 @@
         display: block;
     }
     .nddl{
-        color: white;
         height: 40px;
         width: 150px;
         text-align: center;

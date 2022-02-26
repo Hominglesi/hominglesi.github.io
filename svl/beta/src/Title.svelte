@@ -3,7 +3,7 @@
     export let fontSize = "32px";
     export let fontFamily = "Sofia, Helvetica, sans-serif";
 
-    import './fonts.css';
+ //   import './fonts.css';
 </script>
 
 <style>
