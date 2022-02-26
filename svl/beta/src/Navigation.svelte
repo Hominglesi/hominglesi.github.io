@@ -23,11 +23,13 @@
 <style>
     nav{
         position:relative;
+        top:19px;
         display: none;
-        height: 40px;
         width: 150px;
         text-align: center;
         color: black;
+        border: 1px black solid;
+        background-color: white;
     }
     nav:hover{
         display: block;
@@ -36,10 +38,12 @@
         height: 40px;
         width: 150px;
         text-align: center;
+
     }
     div:hover{
         background-color: white;
         color: black;
+        cursor: pointer;
     }
     div:hover > nav{
         display: block;
