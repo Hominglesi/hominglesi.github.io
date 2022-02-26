@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
+    "postbuild": "copyfiles -u 1 public/index.html public/global.css public/favicon.png public/build/** ../../p/template",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear"
   },
@@ -18,6 +19,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "sirv-cli": "^2.0.0"
   }
 }
