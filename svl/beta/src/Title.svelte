@@ -1,9 +1,9 @@
 <script>
     export let text = "none";
     export let fontSize = "32px";
-    export let fontFamily = "Sofia, Helvetica, sans-serif";
+    export let fontFamily = "Ariel, Helvetica, sans-serif";
+    export let color = "black";
 
- //   import './fonts.css';
 </script>
 
 <style>
@@ -13,4 +13,4 @@
     }
 </style>
 
-<h1 style="font-size: {fontSize}; font-family: {fontFamily};">{text}</h1>
+<h1 style="font-size: {fontSize}; font-family: {fontFamily}; color: {color};">{text}</h1>
