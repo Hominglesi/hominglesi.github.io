@@ -5,6 +5,7 @@
     export let margin = "0";
     export let flexGrow = "0";
     export let alignItems = "auto";
+    export let backgroundColor = "";
 
 
 </script>
@@ -18,4 +19,4 @@
 
 </style>
 
-<div style="width: {width}; height:{height}; flex-direction:{flexDirection}; margin:{margin}; flex-grow:{flexGrow}; align-items:{alignItems}"><slot></slot></div>
+<div style="width: {width}; height:{height}; flex-direction:{flexDirection}; margin:{margin}; flex-grow:{flexGrow}; align-items:{alignItems}; background-color:{backgroundColor}"><slot></slot></div>

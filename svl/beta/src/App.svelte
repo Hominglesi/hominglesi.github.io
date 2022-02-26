@@ -7,7 +7,7 @@ import Navigation from "./Navigation.svelte";
 
 <main>
 	<Title text="Fast Mans" />
-	<Container width="1200px" height="40px" margin="0 auto"> 
+	<Container width="1200px" height="40px" margin="0 auto" backgroundColor="rgba(0,0,0,0.5)"> 
 		<Navigation name="Blog" link="#"/>
 		<Navigation name="Arhivirano" isDropDownList=true>
 			<Container flexDirection="column">
