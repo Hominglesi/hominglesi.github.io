@@ -6,7 +6,7 @@
 </script>
 
 <main>
-	<Title text="Fast Mans" fontFamily="Sofia"/>
+	<Title text="Fast Mans" fontFamily="Sofia" fontSize="48px" margin="32px 0 0 0"/>
 	<Container width="1200px" height="40px" margin="0 auto" backgroundColor="rgba(0,0,0,0.5)"> 
 		<Navigation name="Blog" link="#"/>
 		<Navigation name="Arhivirano" isDropDownList=true>
@@ -20,7 +20,7 @@
 	<Container width="1200px" margin="0 auto" height="10px"/> 
 	<Container width="1200px" margin="0 auto" backgroundColor="rgba(0,0,0,0.6)"> 
 		<Container flexDirection="column" flexGrow="1">
-			<Title text="Blog" fontFamily="Quantico"/>
+			<Title text="Blog" fontFamily="Quantico" fontSize="42px" margin="16px 0 0 0"/>
 		</Container>
 		<Container flexDirection="column" width="450px" alignItems="center">
 			<SideButton text="Playlists" link="#"/>
