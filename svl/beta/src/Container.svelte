@@ -13,4 +13,4 @@
 
 </style>
 
-<div style="width: {width}; height:{height}; flex-direction:{flexDirection};"></div>
+<div style="width: {width}; height:{height}; flex-direction:{flexDirection};"><slot></slot></div>
