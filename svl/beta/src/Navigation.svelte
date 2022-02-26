@@ -4,7 +4,7 @@
     export let isDropDownList=false;
 
     function Redirect(){
-        if(isDropDownList == true){
+        if(isDropDownList == false){
             window.location.href = link
         }
     }
@@ -14,7 +14,7 @@
 <div on:click = {Redirect}>
     {name}
     {#if isDropDownList}
-        <nav>
+        <nav class="nav-item">
             <slot></slot>
         </nav>
     {/if}
