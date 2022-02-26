@@ -79,7 +79,7 @@
 			font-style: normal;
 		}
 		body{
-			background: url("bg.jpg") no-repeat center center fixed;;
+			background: url("build/bg.jpg") no-repeat center center fixed;;
 		}
 	</style>
 </svelte:head>
