@@ -1,20 +1,30 @@
 <script>
-import Container from "./Container.svelte";
-
+	import Container from "./Container.svelte";
 	import SideButton from "./SideButton.svelte";
+	import Title from './Title.svelte';
 </script>
 
 <main>
-	<Container flexDirection="column" width="50%">
-		<SideButton text="Playlists" link="#"/>
-		<SideButton text="Suspicious Dictionary" link="#"/>
-		<SideButton text="Bubble Clicker" link="#"/>
-		<SideButton text="Pong Man" link="#"/>
-		<SideButton text="Toxic Man" link="#"/>
-		<SideButton text="List Man" link="#"/>
-		<SideButton text="Mine Man" link="#"/>
-		<SideButton text="Kalendar" link="#"/>
+	<Title text="Fast Mans" />
+	<Container width="1200px" height="40px" margin="0 auto"> 
+
 	</Container>
+	<Container width="1200px" margin="0 auto"> 
+		<Container flexDirection="column" flexGrow="1">
+			<Title text="Blog" />
+		</Container>
+		<Container flexDirection="column" width="450px" alignItems="center">
+			<SideButton text="Playlists" link="#"/>
+			<SideButton text="Suspicious Dictionary" link="#"/>
+			<SideButton text="Bubble Clicker" link="#"/>
+			<SideButton text="Pong Man" link="#"/>
+			<SideButton text="Toxic Man" link="#"/>
+			<SideButton text="List Man" link="#"/>
+			<SideButton text="Mine Man" link="#"/>
+			<SideButton text="Kalendar" link="#"/>
+		</Container>
+	</Container>
+	
 </main>
 
 <style>
