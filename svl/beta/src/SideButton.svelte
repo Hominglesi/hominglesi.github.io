@@ -1,20 +1,27 @@
 <script>
-    let name;
+    export let text;
+    export let link;
 </script>
 
-
-<button>{name}</button>
+<div on:click={window.location.href = link}>
+    {text}
+</div>
 
 
 <style>
-    button{
+    div{
         border: 2px solid black;
         width: 350px;
         padding-top: 8px;
         padding-bottom: 8px;
+        font-size: 32px;
+        color: black;
+        text-align: center;
+        cursor:pointer;
     }
-    button:hover{
+    div:hover{
         background-color: black;
         color: white;
+
     }
 </style>

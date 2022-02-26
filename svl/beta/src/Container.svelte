@@ -8,8 +8,7 @@
 
 <style>
     div{
-        display: flex;
-        
+        display: flex;       
     }
 
 </style>
