@@ -17,7 +17,7 @@ var matchups = [
     new MatchUp("CSGO","Valorant","uncommon"),
     new MatchUp("Vandal","Phantom","rare"),
     new MatchUp("Odin","Operator","rare"),
-    new MatchUp("Reina","Jett","rare"),
+    new MatchUp("Reyna","Jett","rare"),
     new MatchUp("Yone","Yasuo","rare"),
     new MatchUp("TFT","ARAM","rare"),
     new MatchUp("forty nity","babagee","rare"),
