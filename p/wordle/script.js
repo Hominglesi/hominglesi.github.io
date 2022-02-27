@@ -5,11 +5,12 @@ var players = [];
 var currentPlayer = 0;
 var pointsPerLetter = 2;
 var pointsPerWord = 3;
+var won = false;
 
 var targetWord = GetRandomWord();
 var guessedLetters = ["x","x","x","x","x"];
 
-var prob1 = 5;
+var prob1 = 4;
 var prob2 = 2;
 var prob3 = 1;
 
@@ -43,7 +44,6 @@ function CreatePlayers(){
 }
 
 function GetProbability(tier){
-    return 1;
     switch (tier) {
         case "common": return prob1;
         case "uncommon": return prob2;
@@ -156,9 +156,13 @@ function ProccesWord(){
     if(word == targetWord){
         targetWord = GetRandomWord();
         ResetKeyboard();
+        if(won == true) return;
         if(players[0].points >= maxPoints || players[1].points >= maxPoints){
+            if(players[0].points == players[1].points) return;
             var winner = players[0].points > players[1].points ? players[0].name : players[1].name;
             alert(`'${winner}' is the winner \n ${players[0].name}:${players[0].points}  ${players[1].name}:${players[1].points}`);
+            won = true;
+
         }
     }
 }
