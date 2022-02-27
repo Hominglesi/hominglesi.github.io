@@ -156,6 +156,10 @@ function ProccesWord(){
     if(word == targetWord){
         targetWord = GetRandomWord();
         ResetKeyboard();
+        if(players[0].points >= maxPoints || players[1].points >= maxPoints){
+            var winner = players[0].points > players[1].points ? players[0].name : players[1].name;
+            alert(`'${winner}' is the winner \n ${players[0].name}:${players[0].points}  ${players[1].name}:${players[1].points}`);
+        }
     }
 }
 
