@@ -82,4 +82,5 @@
 			background: url("build/bg.jpg") no-repeat center center fixed;;
 		}
 	</style>
+	<title>Fastmans</title>
 </svelte:head>
