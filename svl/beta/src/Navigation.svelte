@@ -23,14 +23,15 @@
 <style>
     nav{
         position:relative;
-        display: none;
+        opacity: 0;
         width: 150px;
         text-align: center;
         color: black;
         background-color: white;
+        transition: all 0.2s;
     }
     nav:hover{
-        display: block;
+        opacity: 1;
     }
     div{
         height: 40px;
@@ -39,6 +40,7 @@
         color: white;
         font-family: 'Times New Roman', Times, serif;
         font-size: 32px;
+        transition: all 0.2s;
     }
     div:hover{
         background-color: white;
@@ -46,7 +48,8 @@
         cursor: pointer;
     }
     div:hover > nav{
-        display: block;
+        opacity: 1;
+        transition: all 0.2s;
     }
     :global(.nav-container > div > .nav-item){
         background-color: white;
@@ -56,6 +59,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all 0.15s;
     }
     :global(.nav-container > div > .nav-item:hover){
         background-color: black;
