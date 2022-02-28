@@ -48,7 +48,7 @@
 			<SideButton text="Kalendar" link="https://hominglesi.github.io/p/kalendar/index.html"/>
 		</Container>
 	</Container>
-	<TopButton text="▲"/>
+	<TopButton text="↑"/>
 	
 </main>
 

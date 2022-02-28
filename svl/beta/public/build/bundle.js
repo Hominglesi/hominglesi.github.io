@@ -1615,7 +1615,7 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     			div = element("div");
     			t = text(/*text*/ ctx[0]);
     			attr_dev(div, "id", "gas");
-    			attr_dev(div, "class", "svelte-93ldww");
+    			attr_dev(div, "class", "svelte-owcc97");
     			add_location(div, file$1, 31, 0, 883);
     		},
     		l: function claim(nodes) {
@@ -2557,7 +2557,7 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     			$$inline: true
     		});
 
-    	topbutton = new TopButton({ props: { text: "▲" }, $$inline: true });
+    	topbutton = new TopButton({ props: { text: "↑" }, $$inline: true });
 
     	const block = {
     		c: function create() {

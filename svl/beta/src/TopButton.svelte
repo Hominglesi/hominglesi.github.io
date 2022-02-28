@@ -45,6 +45,7 @@ window.addEventListener("scroll", Scroll);
         display: none;
         align-items: center;
         justify-content: center;
+        font-size: 34px;
     }
 
     div:hover{
