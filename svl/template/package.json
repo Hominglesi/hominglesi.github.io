@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "postbuild": "copyfiles -u 1 public/index.html public/global.css public/favicon.png public/build/** ../../p/template",
+    "postbuild": "copyfiles -u 1 public/index.html public/global.css public/favicon.png public/build/** public/content/** ../../p/template",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear"
   },

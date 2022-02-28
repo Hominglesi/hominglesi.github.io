@@ -1,40 +1,35 @@
 <script>
-    export let text;
-    let status="true";
-    function GoTop(){
-        window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-        });
-    }
+    let isAtTop=true;
+    function GoTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
         
     window.addEventListener("scroll", () => {
       let y = window.scrollY;
-      if (y > 0 && status=="true") {
+      if (y > 0 && isAtTop==true) {
         document.getElementById("gas").style.display="flex";
         document.getElementById("gas").animate([{opacity:0},{opacity:1}],{duration : 200,fill:"forwards"});
         document.getElementById("gas").style.cursor="pointer";
-        status="false";
+        isAtTop=false;
       } 
-      else if (y==0 && status=="false"){
+      else if (y==0 && isAtTop==false){
         document.getElementById("gas").style.display="flex";
         document.getElementById("gas").animate([{opacity:1},{opacity:0}],{duration : 200,fill:"forwards"});
         document.getElementById("gas").style.cursor="default";
-        status="true";
+        isAtTop=true;
     }});
     
 </script>
 
 <div id="gas" on:click={GoTop}>
-    {text}
+    <slot/>
 </div>
 
 <style>   
     div{
         position: fixed;
-        bottom: 25px;
-        right: 40px;
+        bottom: 30px;
+        right: 45px;
         background-color: rgba(0, 0, 0, 0.25);
         border-radius: 50%;
         height: 50px;
@@ -43,6 +38,7 @@
         align-items: center;
         justify-content: center;
         font-size: 34px;
+        color: rgb(155, 196, 219);
         transition: all 0.2s;
     }
 

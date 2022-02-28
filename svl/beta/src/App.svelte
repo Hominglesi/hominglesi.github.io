@@ -6,6 +6,8 @@
 	import blogPosts from './blogPosts.js'
 	import BlogPost from "./BlogPost.svelte";
 	import TopButton from "./TopButton.svelte";
+	import Fa from 'svelte-fa/src/fa.svelte'
+	import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 	console.log(blogPosts);
 </script>
@@ -48,7 +50,7 @@
 			<SideButton text="Kalendar" link="https://hominglesi.github.io/p/kalendar/index.html"/>
 		</Container>
 	</Container>
-	<TopButton text="↑"/>
+	<TopButton text=""> <Fa icon={faArrowUp} size="0.9x"/> </TopButton>
 	
 </main>
 
@@ -63,25 +65,25 @@
 	<style>
 		@font-face {
 		font-family: "Quantico";
-		src: url('build/fonts/Quantico.eot?#iefix') format('embedded-opentype'),
-			url('build/fonts/Quantico.woff') format('woff'),
-			url('build/fonts/Quantico.ttf')  format('truetype'),
-			url('build/fonts/Quantico.svg#svgFontName') format('svg');
+		src: url('content/fonts/Quantico.eot?#iefix') format('embedded-opentype'),
+			url('content/fonts/Quantico.woff') format('woff'),
+			url('content/fonts/Quantico.ttf')  format('truetype'),
+			url('content/fonts/Quantico.svg#svgFontName') format('svg');
 		font-weight: normal;
 		font-style: normal;
 		}
 
 		@font-face {
 			font-family: "Sofia";
-			src: url('build/fonts/Sofia.eot?#iefix') format('embedded-opentype'),
-				url('build/fonts/Sofia.woff') format('woff'),
-				url('build/fonts/Sofia.ttf')  format('truetype'),
-				url('build/fonts/Sofia.svg#svgFontName') format('svg');
+			src: url('content/fonts/Sofia.eot?#iefix') format('embedded-opentype'),
+				url('content/fonts/Sofia.woff') format('woff'),
+				url('content/fonts/Sofia.ttf')  format('truetype'),
+				url('content/fonts/Sofia.svg#svgFontName') format('svg');
 			font-weight: normal;
 			font-style: normal;
 		}
 		body{
-			background: url("build/bg.jpg") no-repeat center center fixed;;
+			background: url("content/bg.jpg") no-repeat center center fixed;;
 		}
 	</style>
 	<title>Fastmans</title>
