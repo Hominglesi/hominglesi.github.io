@@ -1616,7 +1616,7 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     			t = text(/*text*/ ctx[0]);
     			attr_dev(div, "id", "gas");
     			attr_dev(div, "class", "svelte-owcc97");
-    			add_location(div, file$1, 31, 0, 883);
+    			add_location(div, file$1, 28, 0, 915);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1663,7 +1663,7 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     	let { text } = $$props;
     	let status = "true";
 
-    	let Scroll = function () {
+    	window.addEventListener("scroll", () => {
     		let y = window.scrollY;
 
     		if (y > 0 && status == "true") {
@@ -1677,9 +1677,8 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     			document.getElementById("gas").style.cursor = "default";
     			status = "true";
     		}
-    	};
+    	});
 
-    	window.addEventListener("scroll", Scroll);
     	const writable_props = ['text'];
 
     	Object.keys($$props).forEach(key => {
@@ -1690,12 +1689,11 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     		if ('text' in $$props) $$invalidate(0, text = $$props.text);
     	};
 
-    	$$self.$capture_state = () => ({ text, status, GoTop, Scroll });
+    	$$self.$capture_state = () => ({ text, status, GoTop });
 
     	$$self.$inject_state = $$props => {
     		if ('text' in $$props) $$invalidate(0, text = $$props.text);
     		if ('status' in $$props) status = $$props.status;
-    		if ('Scroll' in $$props) Scroll = $$props.Scroll;
     	};
 
     	if ($$props && "$$inject" in $$props) {

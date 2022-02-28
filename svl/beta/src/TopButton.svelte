@@ -8,24 +8,21 @@
         behavior: 'smooth'
         });
     }
-
-let Scroll = function(){
-  let y = window.scrollY;
-  if (y > 0 && status=="true") {
-    document.getElementById("gas").style.display="flex";
-    document.getElementById("gas").animate([{opacity:0},{opacity:1}],{duration : 500,fill:"forwards"});
-    document.getElementById("gas").style.cursor="pointer";
-    status="false";
-  } 
-  else if (y==0 && status=="false"){
-    document.getElementById("gas").style.display="flex";
-    document.getElementById("gas").animate([{opacity:1},{opacity:0}],{duration : 500,fill:"forwards"});
-    document.getElementById("gas").style.cursor="default";
-    status="true";
-  }
-};
-
-window.addEventListener("scroll", Scroll);
+        
+    window.addEventListener("scroll", () => {
+      let y = window.scrollY;
+      if (y > 0 && status=="true") {
+        document.getElementById("gas").style.display="flex";
+        document.getElementById("gas").animate([{opacity:0},{opacity:1}],{duration : 500,fill:"forwards"});
+        document.getElementById("gas").style.cursor="pointer";
+        status="false";
+      } 
+      else if (y==0 && status=="false"){
+        document.getElementById("gas").style.display="flex";
+        document.getElementById("gas").animate([{opacity:1},{opacity:0}],{duration : 500,fill:"forwards"});
+        document.getElementById("gas").style.cursor="default";
+        status="true";
+    }});
     
 </script>
 
