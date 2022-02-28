@@ -41,6 +41,7 @@
         font-family: 'Times New Roman', Times, serif;
         font-size: 32px;
         transition: all 0.2s;
+        
     }
     div:hover{
         background-color: white;
@@ -65,5 +66,4 @@
         background-color: black;
         color: white;
     }
-
 </style>
