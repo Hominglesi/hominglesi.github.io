@@ -1615,7 +1615,7 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     			div = element("div");
     			t = text(/*text*/ ctx[0]);
     			attr_dev(div, "id", "gas");
-    			attr_dev(div, "class", "svelte-1csqaph");
+    			attr_dev(div, "class", "svelte-jddw9g");
     			add_location(div, file$1, 23, 0, 428);
     		},
     		l: function claim(nodes) {

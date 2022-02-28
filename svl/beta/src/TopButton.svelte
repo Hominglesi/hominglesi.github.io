@@ -34,7 +34,7 @@ window.addEventListener("scroll", Scroll);
         border-radius: 50%;
         height: 50px;
         width: 50px;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
     }
