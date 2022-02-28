@@ -5,7 +5,7 @@
 	import Title from './Title.svelte';
 	import blogPosts from './blogPosts.js'
 	import BlogPost from "./BlogPost.svelte";
-
+	import TopButton from "./TopButton.svelte";
 
 	console.log(blogPosts);
 </script>
@@ -48,6 +48,7 @@
 			<SideButton text="Kalendar" link="https://hominglesi.github.io/p/kalendar/index.html"/>
 		</Container>
 	</Container>
+	<TopButton text="▲"/>
 	
 </main>
 
