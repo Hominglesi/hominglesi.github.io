@@ -1615,7 +1615,7 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     			div = element("div");
     			t = text(/*text*/ ctx[0]);
     			attr_dev(div, "id", "gas");
-    			attr_dev(div, "class", "svelte-owcc97");
+    			attr_dev(div, "class", "svelte-4r2l90");
     			add_location(div, file$1, 28, 0, 915);
     		},
     		l: function claim(nodes) {
@@ -1668,12 +1668,12 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
 
     		if (y > 0 && status == "true") {
     			document.getElementById("gas").style.display = "flex";
-    			document.getElementById("gas").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, fill: "forwards" });
+    			document.getElementById("gas").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200, fill: "forwards" });
     			document.getElementById("gas").style.cursor = "pointer";
     			status = "false";
     		} else if (y == 0 && status == "false") {
     			document.getElementById("gas").style.display = "flex";
-    			document.getElementById("gas").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, fill: "forwards" });
+    			document.getElementById("gas").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: "forwards" });
     			document.getElementById("gas").style.cursor = "default";
     			status = "true";
     		}
