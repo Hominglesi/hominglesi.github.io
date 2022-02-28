@@ -1615,8 +1615,8 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     			div = element("div");
     			t = text(/*text*/ ctx[0]);
     			attr_dev(div, "id", "gas");
-    			attr_dev(div, "class", "svelte-jddw9g");
-    			add_location(div, file$1, 23, 0, 428);
+    			attr_dev(div, "class", "svelte-93ldww");
+    			add_location(div, file$1, 31, 0, 883);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1661,12 +1661,21 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('TopButton', slots, []);
     	let { text } = $$props;
+    	let status = "true";
 
     	let Scroll = function () {
-    		if (window.scrollY > 0) {
+    		let y = window.scrollY;
+
+    		if (y > 0 && status == "true") {
     			document.getElementById("gas").style.display = "flex";
-    		} else {
-    			document.getElementById("gas").style.display = "none";
+    			document.getElementById("gas").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, fill: "forwards" });
+    			status = "false";
+    			document.getElementById("gas").style.cursor = "pointer";
+    		} else if (y == 0 && status == "false") {
+    			document.getElementById("gas").style.display = "flex";
+    			document.getElementById("gas").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, fill: "forwards" });
+    			document.getElementById("gas").style.cursor = "default";
+    			status = "true";
     		}
     	};
 
@@ -1681,10 +1690,11 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     		if ('text' in $$props) $$invalidate(0, text = $$props.text);
     	};
 
-    	$$self.$capture_state = () => ({ text, GoTop, Scroll });
+    	$$self.$capture_state = () => ({ text, status, GoTop, Scroll });
 
     	$$self.$inject_state = $$props => {
     		if ('text' in $$props) $$invalidate(0, text = $$props.text);
+    		if ('status' in $$props) status = $$props.status;
     		if ('Scroll' in $$props) Scroll = $$props.Scroll;
     	};
 

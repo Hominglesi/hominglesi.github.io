@@ -1,5 +1,6 @@
 <script>
     export let text;
+    let status="true";
     function GoTop(){
         window.scrollTo({
         top: 0,
@@ -9,11 +10,18 @@
     }
 
 let Scroll = function(){
-  if (window.scrollY > 0) {
+  let y = window.scrollY;
+  if (y > 0 && status=="true") {
     document.getElementById("gas").style.display="flex";
+    document.getElementById("gas").animate([{opacity:0},{opacity:1}],{duration : 500,fill:"forwards"});
+    status="false";
+    document.getElementById("gas").style.cursor="pointer";
   } 
-  else {
-    document.getElementById("gas").style.display="none";
+  else if (y==0 && status=="false"){
+    document.getElementById("gas").style.display="flex";
+    document.getElementById("gas").animate([{opacity:1},{opacity:0}],{duration : 500,fill:"forwards"});
+    document.getElementById("gas").style.cursor="default";
+    status="true";
   }
 };
 
@@ -38,8 +46,8 @@ window.addEventListener("scroll", Scroll);
         align-items: center;
         justify-content: center;
     }
+
     div:hover{
         background-color: rgba(0, 0, 0, 0.5);
-        cursor: pointer;
     }
 </style>
