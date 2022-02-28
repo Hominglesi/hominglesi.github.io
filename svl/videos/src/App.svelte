@@ -1,30 +1,29 @@
 <script>
-	export let name;
+	import VideoRow from "./VideoRow.svelte";
+	import Container from "./Container.svelte";
+	import HeadDisplay from "./HeadDisplay.svelte";
+	import TopButton from "./TopButton.svelte";
+
+	import Fa from 'svelte-fa/src/fa.svelte'
+	import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>After copying the template remember to change the build directory in package.json to the desired directory</p>
+	<Container width="100%" flexDirection="column">
+		<HeadDisplay />
+		<Container width="80%" margin="0 auto" gap="1px" flexDirection="column">
+			<VideoRow />
+			<VideoRow />
+			<VideoRow />
+			<VideoRow />
+			<VideoRow />
+		</Container>
+	</Container>
+	<TopButton> <Fa icon={faArrowUp} size="0.9x"/> </TopButton>
+
+	
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>
