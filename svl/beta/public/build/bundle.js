@@ -1669,8 +1669,8 @@ ih ovde ako je neko zainteresovan da pogleda:</h1>
     		if (y > 0 && status == "true") {
     			document.getElementById("gas").style.display = "flex";
     			document.getElementById("gas").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, fill: "forwards" });
-    			status = "false";
     			document.getElementById("gas").style.cursor = "pointer";
+    			status = "false";
     		} else if (y == 0 && status == "false") {
     			document.getElementById("gas").style.display = "flex";
     			document.getElementById("gas").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, fill: "forwards" });
