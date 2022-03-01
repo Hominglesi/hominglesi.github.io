@@ -1,4 +1,7 @@
 <script>   
+    export let cover_src;
+    export let video_src;
+
     let paused = true;
     let bigState = {width: "560px", height: "315px", margin: "0 20px"}
     let smallState = {width: "400px", height: "225px", margin: "0 80px"}
@@ -37,8 +40,8 @@
 </style>
 
 <video
-    poster="./content/covers/narodni_valorant.jpg"
-    src = "./content/videos/kise_jesenje.mp4"
+    poster="./content/covers/{cover_src}"
+    src = "./content/videos/{video_src}"
     on:mousedown={handleMousedown}
     bind:paused>
     <track kind="captions">
