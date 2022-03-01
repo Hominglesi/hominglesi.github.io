@@ -1,30 +1,13 @@
 <script>
-	export let name;
+	import TopButton from "./TopButton.svelte";
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>After copying the template remember to change the build directory in package.json to the desired directory</p>
+	<TopButton />
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	main{
+		height: 200%;
 	}
 </style>
