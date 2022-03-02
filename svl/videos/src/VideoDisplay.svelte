@@ -1,32 +1,53 @@
 <script>   
     export let cover_src;
     export let video_src;
+    import { currentHighlighted } from './stores.js';
 
     let paused = true;
-    let bigState = {width: "560px", height: "315px", margin: "0 20px"}
-    let smallState = {width: "400px", height: "225px", margin: "0 80px"}
+    let ended;
+    let bigState = {width: "560px", height: "315px", margin: "0 40px"}
+    let smallState = {width: "400px", height: "225px", margin: "0 100px"}
     let video;
 
-    function handleMousedown(e){
-        if(video == undefined) video = e.target;
+    $: if(ended == true){
+        endVideo();
+        $currentHighlighted = undefined;
+    }
+    
+    $: if(paused == false && $currentHighlighted?.id != cover_src+video_src){
+        endVideo();
+    }
 
-        if (paused){
-            video.muted = false;
-            video.play();
-            video.animate([smallState,bigState],{duration : 250,fill:"forwards"});
+    function handleMousedown(e){
+        if(paused == true){
+            if($currentHighlighted != video)
+                $currentHighlighted = video;
+
+            playVideo()
         }else{
-            video.muted = true;
-            setTimeout(() => {endVideo()}, 150);
-            
-            e.target.animate([bigState,smallState],{duration : 250,fill:"forwards"});
+            if($currentHighlighted == video)
+                $currentHighlighted = undefined;
+
+            endVideo()
         }
     }
 
+    function playVideo(){
+        video.muted = false;
+            video.play();
+            video.animate([smallState,bigState],{duration : 250,fill:"forwards"});
+    }
+
     function endVideo(){
-        video.pause();
-        video.currentTime = 0;
-        video.load();
-        paused = true;
+        video.muted = true;
+        video.animate([bigState,smallState],{duration : 250,fill:"forwards"});
+
+        setTimeout(() => {
+            video.pause();
+            video.currentTime = 0;
+            video.load();
+            paused = true;
+        }, 150);
     }
 </script>
 
@@ -34,15 +55,18 @@
     video{
         width: 400px;
         height: 225px;
-        margin: 0 80px;
+        margin: 0 100px;
         clip-path: polygon(0 0, 94.5% 0, 100% 10%, 100% 100%, 5.5% 100%, 0 90%);;
     }
 </style>
 
 <video
+    id={cover_src+video_src}
     poster="./content/covers/{cover_src}"
     src = "./content/videos/{video_src}"
+    bind:this={video}
     on:mousedown={handleMousedown}
+    bind:ended
     bind:paused>
     <track kind="captions">
 </video>
