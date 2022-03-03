@@ -1,14 +1,21 @@
 <script>
     import VideoDisplay from "./VideoDisplay.svelte";
     import { currentHighlighted } from './stores.js';
+    import Container from "./Container.svelte";
+    import ListInfo from "./ListInfo.svelte";
+    
     export let name;
     export let cover_src;
     export let video_src;
     export let link;
-    //export let playlists;
+    export let playlists;
+    export let date;
+    export let length;
+    export let lengthDisplay;
+    export let isFliped = false;
 
-    let bigState = {padding: "60px 0"}
-    let smallState = {padding: "0 0"}
+    let bigState = {}
+    let smallState = {}
 
     let container;
 
@@ -28,6 +35,7 @@
             container.animate([bigState,smallState],{duration : 250,fill:"forwards"});
         }
     }
+    
 </script>
 
 
@@ -35,14 +43,28 @@
     div{
         background-color: aqua;
         width: 100%;
-        height: 300px;
         display: flex;
+        padding: 16px 0;
         flex-direction: row;
         align-items: center;
     }
+
 </style>
 
 <div bind:this={container}>
-    <VideoDisplay cover_src={cover_src} video_src={video_src} />
-    <a href={link}><h1>{name}</h1></a>
+        {#if isFliped == false}
+            <Container width="fit-content">
+                <VideoDisplay {cover_src} {video_src}/>
+            </Container>
+            <Container flexGrow="1" >
+                <ListInfo {isHighlighted} {name} {link} {playlists} {date} {lengthDisplay} />
+            </Container>
+        {:else}
+            <Container flexGrow="1" flexDirection="row-reverse" >
+                <ListInfo {isHighlighted} {name} {link} {playlists} {date} {lengthDisplay} />
+            </Container>
+            <Container width="fit-content">
+                <VideoDisplay {cover_src} {video_src} />
+            </Container>
+        {/if}
 </div>

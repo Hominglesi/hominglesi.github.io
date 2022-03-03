@@ -1,17 +1,17 @@
 <script>
-
+    export let width = "100%";
 </script>
 
 <style>
     div{
-        width: 100%;
         background-color: bisque;
         height: 42px;
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 </style>
 
-<div class="head-container">
+<div class="head-container" style="width: {width};">
     <slot />
 </div>

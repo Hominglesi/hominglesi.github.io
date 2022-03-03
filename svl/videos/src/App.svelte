@@ -6,28 +6,61 @@
 
 	import videoData from "./videoData";
 	import Fa from 'svelte-fa/src/fa.svelte'
-	import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+	import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
+	import { flip } from 'svelte/animate';
+	import { currentHighlighted } from './stores.js';
 	import HeadSelection from "./HeadSelection.svelte";
-import HeadButton from "./HeadButton.svelte";
+	import HeadButton from "./HeadButton.svelte";
 
-	let currentPlaylist = "season_2";
-	$: currentVideos = SetPlaylist(currentPlaylist);
+	let currentPlaylist = "";
+	let currentSorting = "date";
+	let isReverse = false;
 
-	function SetPlaylist(playlist) {
-		return videoData.filter(vid => vid.playlists.includes(playlist));
+	function FlipOrder() {isReverse = !isReverse;}
+	$: currentVideos = SetSorting(currentPlaylist, currentSorting, isReverse);
+
+	function SetSorting(playlist, sorting, isReverse) {
+		$currentHighlighted = undefined;
+		var vids;
+		if(playlist == "") vids = videoData;
+		else vids = videoData.filter(vid => vid.playlists.includes(playlist));
+		switch(sorting){
+			case "date":
+				vids.sort((a, b) => a.date-b.date); break;
+			case "title": 
+				vids.sort((a, b) => a.name.localeCompare(b.name)); break;
+			case "length":
+				vids.sort((a, b) => b.length-a.length); break;
+		}
+		if(isReverse) vids.reverse();
+		return vids;
 	}
+	console.log(videoData);
 </script>
 
 <main>
 	<Container width="100%" flexDirection="column">
 		<HeadDisplay />
 		<Container width="80%" margin="0 auto" gap="1px" flexDirection="column">
-			<HeadSelection>
-				<HeadButton><Fa icon={faArrowUp} size="1.2x"/></HeadButton>
-				<HeadButton isRight=true><h1>how</h1></HeadButton>
-			</HeadSelection>
-			{#each videoData as vid, i}
-				<VideoRow {...vid} />
+			<Container flexGrow="1" flexDirection="row">
+				<HeadSelection>
+					<HeadButton isLabel><h1>Sort by</h1></HeadButton>
+					<HeadButton on:click={_ => {currentSorting = "date"}}><h1>Date</h1></HeadButton>
+					<HeadButton on:click={_ => {currentSorting = "title"}}><h1>Title</h1></HeadButton>
+					<HeadButton on:click={_ => {currentSorting = "length"}}><h1>Length</h1></HeadButton>
+					<HeadButton on:click={_ => {currentPlaylist = ""}}><h1>All</h1></HeadButton>
+					<HeadButton on:click={_ => {currentPlaylist = "season_1"}}><h1>Season 1</h1></HeadButton>
+					<HeadButton on:click={_ => {currentPlaylist = "season_2"}}><h1>Season 2</h1></HeadButton>
+					
+				</HeadSelection>
+				<HeadSelection width="70px">
+					<HeadButton on:click={FlipOrder}><Fa icon={isReverse == false ? faArrowUp : faArrowDown} size="1.2x"/></HeadButton>
+				</HeadSelection>
+			</Container>
+			{#each currentVideos as vid , i (vid)}
+				<div animate:flip="{{duration:dist => 18 * Math.sqrt(dist)}}">
+					<VideoRow {...vid} isFliped={i%2==1}/>
+				</div>
 			{/each}
 			
 		</Container>

@@ -5,8 +5,8 @@
 
     let paused = true;
     let ended;
-    let bigState = {width: "560px", height: "315px", margin: "0 40px"}
-    let smallState = {width: "400px", height: "225px", margin: "0 100px"}
+    let bigState = {width: "640px", height: "360px", margin: "0 40px"}
+    let smallState = {width: "400px", height: "225px", margin: "0 60px"}
     let video;
 
     $: if(ended == true){
@@ -35,12 +35,12 @@
     function playVideo(){
         video.muted = false;
             video.play();
-            video.animate([smallState,bigState],{duration : 250,fill:"forwards"});
+            video.animate([smallState,bigState],{duration : 220,fill:"forwards"});
     }
 
     function endVideo(){
         video.muted = true;
-        video.animate([bigState,smallState],{duration : 250,fill:"forwards"});
+        video.animate([bigState,smallState],{duration : 220,fill:"forwards"});
 
         setTimeout(() => {
             video.pause();
@@ -55,7 +55,7 @@
     video{
         width: 400px;
         height: 225px;
-        margin: 0 100px;
+        margin: 0 60px;
         clip-path: polygon(0 0, 94.5% 0, 100% 10%, 100% 100%, 5.5% 100%, 0 90%);;
     }
 </style>
