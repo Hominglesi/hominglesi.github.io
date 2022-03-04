@@ -26,7 +26,7 @@
 		else vids = videoData.filter(vid => vid.playlists.includes(playlist));
 		switch(sorting){
 			case "date":
-				vids.sort((a, b) => a.date-b.date); break;
+				vids.sort((a, b) => b.date-a.date); break;
 			case "title": 
 				vids.sort((a, b) => a.name.localeCompare(b.name)); break;
 			case "length":
@@ -70,6 +70,17 @@
 	
 </main>
 
-<style>
-
-</style>
+<svelte:head>
+	<style>
+		@font-face {
+		font-family: "Quantico";
+		src: url('content/fonts/Quantico.eot?#iefix') format('embedded-opentype'),
+			url('content/fonts/Quantico.woff') format('woff'),
+			url('content/fonts/Quantico.ttf')  format('truetype'),
+			url('content/fonts/Quantico.svg#svgFontName') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+	</style>
+	<title>Fastmans</title>
+</svelte:head>

@@ -41,7 +41,7 @@
 
 <style>
     div{
-        background-color: aqua;
+        
         width: 100%;
         display: flex;
         padding: 16px 0;
@@ -61,7 +61,7 @@
             </Container>
         {:else}
             <Container flexGrow="1" flexDirection="row-reverse" >
-                <ListInfo {isHighlighted} {name} {link} {playlists} {date} {lengthDisplay} />
+                <ListInfo {isHighlighted} {name} {link} {playlists} {date} {lengthDisplay} {isFliped} />
             </Container>
             <Container width="fit-content">
                 <VideoDisplay {cover_src} {video_src} />
