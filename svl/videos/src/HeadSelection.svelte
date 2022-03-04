@@ -4,11 +4,13 @@
 
 <style>
     div{
-        background-color: bisque;
+        background-color: var(--c-accent2);
         height: 42px;
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin-bottom: 16px;
+        border-radius: 0 0 20px 20px;
     }
 </style>
 

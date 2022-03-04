@@ -5,8 +5,8 @@
 
     let paused = true;
     let ended;
-    let bigState = {width: "640px", height: "360px", margin: "0 20px 0 40px"}
-    let smallState = {width: "400px", height: "225px", margin: "0 20px 0 60px"}
+    let bigState = {width: "640px", height: "360px"}
+    let smallState = {width: "400px", height: "225px"}
     let video;
 
     $: if(ended == true){
@@ -55,12 +55,20 @@
     video{
         width: 400px;
         height: 225px;
-        margin: 0 20px 0 60px;
-        clip-path: polygon(0 0, 94.5% 0, 100% 10%, 100% 100%, 5.5% 100%, 0 90%);;
+        clip-path: polygon(0 0, 94.5% 0, 100% 10%, 100% 100%, 5.5% 100%, 0 90%);
+        display: block;
+    }
+    div{
+        background-color: var(--c-accent2);
+        margin: 0 20px;
+        height: min-content;
+        padding: 4px;
+        clip-path: polygon(0 0, 94.5% 0, 100% 10%, 100% 100%, 5.5% 100%, 0 90%);
     }
 </style>
 
-<video
+<div>
+    <video
     id={cover_src+video_src}
     poster="./content/covers/{cover_src}"
     src = "./content/videos/{video_src}"
@@ -69,4 +77,5 @@
     bind:ended
     bind:paused>
     <track kind="captions">
-</video>
+    </video>
+</div>

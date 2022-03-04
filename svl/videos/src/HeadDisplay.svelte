@@ -4,12 +4,12 @@
 
 <style>
     div{
-        background-color: salmon;
+        background-color: var(--c-accent1);
         width: 100%;
-        height: 100px;
+        height: 700px;
     }
 </style>
 
 <div>
-    <h1>Current highlighted: {$currentHighlighted?.id}</h1>
+    
 </div>
