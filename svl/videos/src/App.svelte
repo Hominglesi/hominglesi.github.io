@@ -95,10 +95,6 @@
 		}
 
 		body{
-			background-position: center 700px;
-			background-size: 1900px 2000px;
-			background-attachment: fixed;
-			background-image: url("content/bg-cover.png");
 			background-color: var(--c-background);
 		}
 	</style>
