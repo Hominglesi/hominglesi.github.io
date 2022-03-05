@@ -70,8 +70,8 @@
 <div>
     <video
     id={cover_src+video_src}
-    poster="https://hominglesi.github.io/videoStorage/covers/{cover_src}"
-    src = "https://hominglesi.github.io/videoStorage/previews/{video_src}"
+    poster="https://hominglesi.github.io/storage/covers/{cover_src}"
+    src = "https://hominglesi.github.io/storage/previews/{video_src}"
     bind:this={video}
     on:mousedown={handleMousedown}
     bind:ended
