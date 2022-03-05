@@ -56,7 +56,7 @@
 				</HeadSelection>
 			</Container>
 			{#each currentVideos as vid , i (vid)}
-				<div animate:flip="{{duration:dist => 18 * Math.sqrt(dist)}}">
+				<div animate:flip="{{duration:800 }}">
 					<VideoRow {...vid} isFliped={i%2==1}/>
 				</div>
 			{/each}
