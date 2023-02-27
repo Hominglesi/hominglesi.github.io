@@ -39,6 +39,7 @@
 			{/each}
 		</Container>
 		<Container flexDirection="column" width="450px" alignItems="center" gap="8px" padding="50px 0 0 0">
+			<SideButton text="Jamming" link="https://drive.google.com/drive/folders/1Oh1zgmIlxK6h7NpveitJOcxZoRF22p1e?usp=share_link"/>
 			<SideButton text="Wordle Versus" link="https://hominglesi.github.io/p/wordle/"/>
 			<SideButton text="Playlists" link="https://hominglesi.github.io/p/playlists/index.html"/>
 			<SideButton text="Suspicious Dictionary" link="https://hominglesi.github.io/p/dictionary/index.html"/>
