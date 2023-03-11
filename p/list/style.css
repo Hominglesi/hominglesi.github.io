@@ -92,22 +92,22 @@
 }
 
 .list_img_ow{
-  width: 7.5vh;
-  height: 13vh;
+  width: 10vh;
+  height: 10vh;
   padding:0.5vh;
   margin-right: 5px;
 }
 
 .list_img_selected_ow{
-  width: 7.5vh;
-  height: 13vh;
+  width: 10vh;
+  height: 10vh;
   background-color: grey;
   padding:0.5vh;
   margin-right: 5px;
 }
 
 .tier_img_ow{
-  width: 7.5vh;
+  width: 13vh;
   height: 13vh;
   margin-right: 5px
 }

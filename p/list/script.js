@@ -5,7 +5,7 @@ let content_heavys = ["h1","h2","h3","h4","h5","h6"];
 let content_rifles = ["r1","r2","r3","r4","r5","r6","r7","r8","r9","r10","r11"];
 let content_smgs = ["s1","s2","s3","s4","s5","s6","s7"];
 let content_maps = ["m1","m2","m3","m4","m5","m6","m7","m8","m9","m10","m11"];
-let content_ow_heroes = ["h1","h2","h3","h4","h5","h6","h7","h8","h9","h10","h11","h12","h13","h14","h15","h16","h17","h18","h19","h20","h21","h22","h23","h24","h25","h26","h27","h28","h29","h30","h31"];
+let content_ow_heroes = ["h1","h2","h3","h4","h5","h6","h7","h8","h9","h10","h11","h12","h13","h14","h15","h16","h17","h18","h19","h20","h21","h22","h23","h24","h25","h26","h27","h28","h29","h30","h31","h32","h33","h34","h35","h36"];
 let content_selected;
 
 let img_class = "list_img";
